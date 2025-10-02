@@ -1,6 +1,4 @@
-
-
-<div class="yt-square-fit">
+<div class="yt-square">
   <iframe
     src="https://www.youtube.com/embed/05cSwG70N6Y?playsinline=1&modestbranding=1&rel=0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -9,26 +7,28 @@
 </div>
 
 <style>
-  .yt-square-fit{
-    position:relative;
-    width:100%;
-    max-width:420px;
-    aspect-ratio:1/1;
-    margin:auto;
-    background:#000;
-    border-radius:12px;
+  .yt-square {
+    position: relative;
+    width: 100%;
+    max-width: 420px;   /* control size of the square */
+    aspect-ratio: 1/1;  /* force square */
+    margin: auto;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;   /* crop overflow */
   }
-  .yt-square-fit iframe{
-    /* Keep the 16:9 player intact and center it inside the square */
-    position:absolute;
-    top:50%; left:50%;
-    width:100%;
-    height:56.25%;         /* 9/16 of the width */
-    transform:translate(-50%,-50%);
-    border:0;
+
+  .yt-square iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78%;     /* 16/9 × 100% → fill height */
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border: 0;
   }
 </style>
 
 <p>
 
-v.3
+v.4
